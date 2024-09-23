@@ -1,13 +1,14 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Button } from "@/components/button/button";
+import GithubIcon from "@/components/icons/Github";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Button>Hello</Button>
-        <Button color="danger">Hello</Button>
+        <Button leftIcon={<GithubIcon/>}>Hello</Button>
+        <Button color="danger" rightIcon={<GithubIcon/>}>Hello</Button>
         <Button color="first" variant="outline">Hello</Button>
         <Button variant="outline">Hello</Button>
         <Button variant="ghost">Hello</Button>
