@@ -1,6 +1,30 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* clr tint generator: https://colorkit.co/color-shades-generator/ */
+  --clr-first-950: #030303;
+  --clr-first-900: #151515;
+  --clr-first-800: #2d2d2d;
+  --clr-first-700: #464646;
+  --clr-first-600: #616161;
+  --clr-first-500: #7d7d7d;
+  --clr-first-400: #9b9b9b;
+  --clr-first-300: #bababa;
+  --clr-first-200: #d9d9d9;
+  --clr-first-100: #fafafa;
+
+  --clr-danger-950:#c30000;
+  --clr-danger-900:#cd3629;
+  --clr-danger-800:#d55243;
+  --clr-danger-700:#dd6a5b;
+  --clr-danger-600:#e58072;
+  --clr-danger-500:#eb9689;
+  --clr-danger-400:#f1aba0;
+  --clr-danger-300:#f6c0b7;
+  --clr-danger-200:#fad5cf;
+  --clr-danger-100:#fdeae7;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,7 +48,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -35,8 +59,8 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */

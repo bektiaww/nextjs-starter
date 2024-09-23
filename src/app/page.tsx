@@ -1,10 +1,17 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Button } from "@/components/button/button";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Button>Hello</Button>
+        <Button color="danger">Hello</Button>
+        <Button color="first" variant="outline">Hello</Button>
+        <Button variant="outline">Hello</Button>
+        <Button variant="ghost">Hello</Button>
+
         <Image
           className={styles.logo}
           src="https://nextjs.org/icons/next.svg"
