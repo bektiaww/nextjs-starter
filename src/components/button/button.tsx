@@ -1,13 +1,13 @@
 import { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react"
 import styles from './styles.module.css'
 
-export const Button = ({variant, color, leftIcon, rightIcon, ...rest}
-    :ButtonHTMLAttributes<HTMLButtonElement> & {
-        variant?:"solid" | "outline" | "ghost" | "link",
-        color?: string
-        leftIcon?:ReactNode
-        rightIcon?:ReactNode
-    })=>{
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+    variant?:"solid" | "outline" | "ghost" | "link",
+    color?: string
+    leftIcon?:ReactNode
+    rightIcon?:ReactNode
+}
+export const Button = ({variant, color, leftIcon, rightIcon, ...rest}:ButtonProps)=>{
     return(
         <button {...rest}
             // adding css variable
@@ -17,10 +17,10 @@ export const Button = ({variant, color, leftIcon, rightIcon, ...rest}
                 "--clr-light": `var(--clr-${color}-100)`,
                 "--clr-light-less": `var(--clr-${color}-200)`,
             } as CSSProperties :{
-                "--clr-dark":"var(--clr-first-950)",
-                "--clr-dark-less":"var(--clr-first-900)",
-                "--clr-light":"var(--clr-first-100)",
-                "--clr-light-less":"var(--clr-first-200)",            
+                "--clr-dark":"var(--clr-primary-950)",
+                "--clr-dark-less":"var(--clr-primary-900)",
+                "--clr-light":"var(--clr-primary-100)",
+                "--clr-light-less":"var(--clr-primary-200)",            
             } as CSSProperties}
             className={`
                     ${styles.base}
