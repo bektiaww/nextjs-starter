@@ -3,7 +3,9 @@
     left:50%;
     top:50%;
     transform: translate(-50%, -50%);
-    width:var(--modal-width)
+    width:var(--modal-width);
+    border:none;
+    border-radius:0.5rem;
 }
 
 .modal::backdrop {

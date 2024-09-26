@@ -1,7 +1,7 @@
 .base {
     font-size:1em;
     border-radius:0.5em;
-    padding:0.6em 1.2em;
+    padding:0.5em 1em;
     min-width:2em;
     font-weight:500;
     /* for icon */
@@ -11,24 +11,25 @@
     gap:0.25em;
 }
 
-.solid {
+.fill {
     border:1px solid var(--clr-light);
     transition:color 0.25s;
     color:var(--clr-light);
     background:var(--clr-dark);
 }
-.solid:hover{
-    background:var(--clr-dark-less);
+.fill:hover{
+    background:var(--clr-dark-hover);
 }
 
 .outline {
     border:1px solid var(--clr-dark);
     background: var(--clr-light);
     color: var(--clr-dark);
-    transition:border 0.25s;
+    transition:background 0.25s;
 }
+
 .outline:hover{
-    border:1px solid var(--clr-dark-less);
+    background: var(--clr-light-hover);
 }
 
 .ghost {
@@ -38,5 +39,5 @@
     transition:color 0.25s
 }
 .ghost:hover{
-    background:var(--clr-light-less);
+    background:var(--clr-light-hover);
 }

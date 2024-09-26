@@ -2,29 +2,27 @@ import { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react"
 import styles from './styles.module.css'
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    variant?:"solid" | "outline" | "ghost" | "link",
+    variant?:"fill" | "outline" | "ghost" | "link",
     color?: string
     leftIcon?:ReactNode
     rightIcon?:ReactNode
+    size?:string
 }
-export const Button = ({variant, color, leftIcon, rightIcon, ...rest}:ButtonProps)=>{
+
+export const Button = ({variant, color, leftIcon, rightIcon, size, ...rest}:ButtonProps)=>{
     return(
         <button {...rest}
-            // adding css variable
-            style={color!==undefined ? {
-                "--clr-dark": `var(--clr-${color}-950)`,
-                "--clr-dark-less": `var(--clr-${color}-900)`,
-                "--clr-light": `var(--clr-${color}-100)`,
-                "--clr-light-less": `var(--clr-${color}-200)`,
-            } as CSSProperties :{
-                "--clr-dark":"var(--clr-primary-950)",
-                "--clr-dark-less":"var(--clr-primary-900)",
-                "--clr-light":"var(--clr-primary-100)",
-                "--clr-light-less":"var(--clr-primary-200)",            
-            } as CSSProperties}
+            style={{
+                "--font-size": size? `${size}rem`:"1rem",
+                "--clr-dark": color? `var(--clr-${color}-950)`:"var(--clr-primary-950)",
+                "--clr-dark-hover": color? `var(--clr-${color}-800)`:"var(--clr-primary-800)",
+                "--clr-light": color? `var(--clr-${color}-100)`:"var(--clr-primary-100)",
+                "--clr-light-hover": color? `var(--clr-${color}-200)`:"var(--clr-primary-200)",
+            } as CSSProperties }
+            //className based on variant
             className={`
                     ${styles.base}
-                    ${(variant==="solid" || variant===undefined) && styles.solid}
+                    ${(variant==="fill" || variant===undefined) && styles.fill}
                     ${variant==="outline" && styles.outline}
                     ${variant==="ghost" && styles.ghost}
                 `}

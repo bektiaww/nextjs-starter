@@ -1,14 +1,17 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Button } from "@/components/button/button";
-import GithubIcon from "@/components/icons/Github";
-import { MyModalExample,  } from "@/components/modal/modal";
+import { MyModalExample,  } from "@/components/Modal/modal";
+import { DropdownExample } from "@/components/Dropdown/Dropdown";
+import { Button } from "@/components/Button/Button";
+import GithubIcon from "@/components/Icons/GithubIcon";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Button leftIcon={<GithubIcon/>}>hello</Button>
         <MyModalExample/>
+        <DropdownExample/>
         <Image
           className={styles.logo}
           src="https://nextjs.org/icons/next.svg"

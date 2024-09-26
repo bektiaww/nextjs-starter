@@ -1,6 +1,6 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #0a0a0a;
+  --foreground: #ededed; */
 
   /* clr tint generator: https://colorkit.co/color-shades-generator/ */
   --clr-primary-950: #030303;
@@ -33,19 +33,18 @@
   --space-5: 1.25rem;
   --space-6:1.5rem;
   --space-8: 2rem;
-  
   /* section-spacing */
   --space-9: 2.5rem;
   --space-10: 5rem;
   --space-11: 9rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 html,
 body {

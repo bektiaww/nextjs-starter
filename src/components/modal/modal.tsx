@@ -1,10 +1,9 @@
 "use client"
 import { createContext, CSSProperties, ReactNode, useContext, useEffect, useRef } from "react"
-import { Button } from "../button/button"
 import { useDisclosure } from "@/hooks/useDisclosure"
 import styles from './styles.module.css'
-import Close from "../icons/Close"
-import { IconButton } from "../button/iconButton/iconButton"
+import CloseIcon from "../Icons/CloseIcon"
+import { Button } from "../Button/Button"
 
 type ModalSize = "sm" | "md" | "lg" | "xl"
 const ModalContext = createContext<{isOpen:boolean, close:()=>void}>({isOpen:false, close:()=>{}});
@@ -37,11 +36,10 @@ export const Modal = ({isOpen, close, size, children}:{isOpen:boolean, close:()=
 
 export const ModalHeader = ({children}:{children:ReactNode})=>{
     const {close} = useContext(ModalContext);
-
     return(
         <div className={styles.header}>
             <h3>{children}</h3>
-            <button onClick={close} className={styles.closeButton}><Close/></button>
+            <button onClick={close} className={styles.closeButton} style={{fontSize:"1.25rem"}}><CloseIcon/></button>
         </div>
     )
 }
@@ -63,7 +61,7 @@ export const MyModalExample = ()=>{
 
     return(
         <>        
-        <Button onClick={open}>open</Button>
+        <Button onClick={open} variant="outline">open</Button>
         <Modal isOpen={isOpen} close={close}>
             <ModalHeader>Hello world</ModalHeader>
             <ModalBody>

@@ -1,0 +1,18 @@
+.alert {
+    padding:var(--space-1);
+}
+
+.fill {
+    background:var(--clr-alert);
+    color:white;
+}
+
+.outline {
+    background:transparent;
+    border:1px solid var(--clr-alert);
+    color:var(--clr-alert);
+}
+
+.ghost {
+
+}
