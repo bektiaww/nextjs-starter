@@ -1,9 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { MyModalExample,  } from "@/components/Modal/modal";
 import { DropdownExample } from "@/components/Dropdown/Dropdown";
 import { Button } from "@/components/Button/Button";
 import GithubIcon from "@/components/Icons/GithubIcon";
+import { MyModalExample } from "@/components/Modal/Modal";
+import { DrawerExample } from "@/components/Drawer/Drawer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <Button leftIcon={<GithubIcon/>}>hello</Button>
         <MyModalExample/>
         <DropdownExample/>
+        <DrawerExample/>
         <Image
           className={styles.logo}
           src="https://nextjs.org/icons/next.svg"

@@ -1,0 +1,54 @@
+@keyframes slide-in {
+    0% {opacity:0};
+    1% { /* dialog modal must shown first inside viewport if not the layout will break*/
+        opacity:0;
+        transform:translateX(100%);
+    }
+}
+
+.drawer {
+    position:fixed;
+    border:none;
+    top:0;
+    margin-left:auto;
+    transition:transform 500ms ease-in-out;
+    height:100vh;
+}
+
+.drawer[open] {
+    animation-name: slide-in;
+    animation-duration: 500ms;
+}
+
+.drawer-onclose {
+    transform:translateX(100%);
+}
+
+.drawer__container {
+    display:grid;
+    height:100%;
+    padding:var(--space-4);
+    gap:var(--space-2);
+    grid-template-rows: max-content auto max-content;
+    background:red;
+}
+
+.drawer__header {
+    display:flex;
+    gap:var(--space-10);
+    align-items:center;
+    justify-content:space-between;
+    padding: var(--space-1) var(--space-4);
+    border-bottom : 1px solid var(--clr-primary-200);
+}
+
+.drawer__close-icon {
+    border:none;
+    padding:0;
+    aspect-ratio:1/1;
+    background:transparent;
+}
+
+.drawer__close-icon:hover{
+    color:var(--clr-primary-800);
+}

@@ -1,9 +1,9 @@
 'use client'
 import { useDisclosure } from "@/hooks/useDisclosure"
-import { ButtonHTMLAttributes, CSSProperties, MouseEventHandler, ReactElement, useRef } from "react"
+import { ButtonHTMLAttributes, CSSProperties, MouseEventHandler, ReactElement, useEffect, useRef } from "react"
 import styles from './styles.module.css'
-import { Button, ButtonProps } from "../Button/Button"
 import { LeftIcon, RightIcon, UpIcon, DownIcon } from "../Icons/ChevronIcon"
+import { Button, ButtonProps } from "../Button/Button"
 
 
 export const DropdownExample =()=>{
@@ -17,7 +17,7 @@ export const DropdownExample =()=>{
     )
 }
 
-type DropdownsProps = Pick<ButtonProps, "color"|"variant"|"size"> & {
+type DropdownsProps = Pick<ButtonProps, "color"|"variant"|"fontSize"> & {
     show?:"bottom"|"right"|"left"|"top",
     icon?:"right"|"left",
     children:Array<ReactElement> | ReactElement,
